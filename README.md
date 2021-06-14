@@ -11,5 +11,6 @@
 
 #### Configuration
       Swagger
-      Visit <http://localhost:8080/swagger-ui.html#/>
+      Visit http://localhost:8080/swagger-ui.html#/
+      
       
