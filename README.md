@@ -8,3 +8,8 @@
       1. First, install Java on your system.
       2. Install the latest maven dependency manager.
       3. mvn spring-boot:run
+
+#### Configuration
+      Swagger
+      Visit http://localhost:8080/swagger-ui.html#/
+      
