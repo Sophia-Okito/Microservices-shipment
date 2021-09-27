@@ -10,7 +10,7 @@
       3. mvn spring-boot:run
 
 #### Configuration
-      Swagger
+      Swagger :
       Visit http://localhost:8080/swagger-ui.html#/
       
       
