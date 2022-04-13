@@ -7,10 +7,15 @@ pipeline {
       }
     }
 
-    stage('Maven') {
+    stage('Running') {
       steps {
-        sh 'mvn clean install'
-        sh 'mvn spring-boot:run'
+        sh 'echo "running..."'
+      }
+    }
+
+    stage('Dine') {
+      steps {
+        sh 'echo "done"'
       }
     }
 
