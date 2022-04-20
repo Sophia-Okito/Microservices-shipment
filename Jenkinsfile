@@ -7,6 +7,7 @@ pipeline {
     stage('Preparing to start') {
       steps {
         echo '**********Getting Ready***********'
+        sh "mvn -version"
       }
     }
 
