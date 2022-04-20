@@ -19,7 +19,7 @@ pipeline {
 
         stage('Maven Version') {
           steps {
-            sh 'sh "mvn --version"'
+            sh 'sh "mvn -version"'
           }
         }
 
@@ -43,7 +43,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             timeout(time: 90) {
               echo 'Performance testing complete'
