@@ -2,10 +2,27 @@ pipeline {
   agent any
   stages {
     stage('Preparing to start') {
-      steps {
-        echo '**********Getting Ready***********'
-        sh 'mvn -version'
-        sh 'java -version'
+      parallel {
+        stage('Preparing to start') {
+          steps {
+            echo '**********Getting Ready***********'
+            sh 'mvn -version'
+            sh 'java -version'
+          }
+        }
+
+        stage('Just Branchin') {
+          steps {
+            echo 'branching out'
+          }
+        }
+
+        stage('Maven Version') {
+          steps {
+            sh 'sh "mvn --version"'
+          }
+        }
+
       }
     }
 
@@ -17,10 +34,24 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        echo '*******Testing*******'
-        sh 'mvn test'
-        junit 'target/**/*.xml'
+      parallel {
+        stage('Test') {
+          steps {
+            echo '*******Testing*******'
+            sh 'mvn test'
+            junit 'target/**/*.xml'
+          }
+        }
+
+        stage('') {
+          steps {
+            timeout(time: 90) {
+              echo 'Performance testing complete'
+            }
+
+          }
+        }
+
       }
     }
 
